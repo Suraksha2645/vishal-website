@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT Life Style Salon | Bengaluru</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    
+    <!-- Top Nav -->
+    <nav class="top-nav">
+        <div class="nav-brand">
+            <span class="brand-name">BT</span>
+            <span class="brand-sub">Life Style Salon</span>
+        </div>
+        <div class="nav-links">
+            <button onclick="showHomeView()" class="nav-link active" id="homeBtn">HOME</button>
+            <button onclick="showCustomerView()" class="nav-link" id="customerBtn">BOOK</button>
+            <button onclick="showAdminView()" class="nav-link" id="adminBtn">ADMIN</button>
+        </div>
+    </nav>
+
+    <!-- HOME VIEW -->
+    <div id="homeView" class="page active">
+
+        <!-- Hero Banner -->
+        <div class="hero-banner">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="hero-eyebrow">Near Ekana Hospital, Bengaluru</p>
+                <h1 class="hero-title">Experience Luxury.<br>Experience You.</h1>
+                <p class="hero-desc">Expert haircuts, bridal makeovers, skin treatments and premium grooming — all under one roof.</p>
+                <button onclick="showCustomerView()" class="hero-btn">Book an Appointment →</button>
+            </div>
+        </div>
+
+        <!-- Quick Info Bar -->
+        <div class="info-bar">
+            <div class="info-bar-item">
+                <span class="info-bar-icon">📍</span>
+                <span>AK Colony, Akshayanagar, Bengaluru 560068</span>
+            </div>
+            <div class="info-bar-divider"></div>
+            <div class="info-bar-item">
+                <span class="info-bar-icon">🕐</span>
+                <span>9:00 AM – 8:00 PM · Open Daily</span>
+            </div>
+            <div class="info-bar-divider"></div>
+            <div class="info-bar-item">
+                <span class="info-bar-icon">📞</span>
+                <a href="tel:6399747073">+91 63997 47073</a>
+            </div>
+        </div>
+
+        <!-- About -->
+        <section class="about-section">
+            <div class="about-text">
+                <p class="section-eyebrow">About Us</p>
+                <h2 class="section-heading">Where Style Meets Perfection</h2>
+                <div class="section-rule"></div>
+                <p>Looking for the best salon near Ekana Hospital? Welcome to BT Life Style Salon — a place where style meets perfection. We offer expert haircuts, bridal makeovers, skin treatments, and premium grooming services designed to enhance your natural beauty.</p>
+                <p>With experienced stylists, hygienic practices, and personalised care, we ensure every visit leaves you confident and refreshed.</p>
+                <p class="about-tagline">Experience luxury. Experience transformation. Experience the best.</p>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section">
+            <p class="section-eyebrow" style="text-align:center;">What We Offer</p>
+            <h2 class="section-heading" style="text-align:center;">Our Services</h2>
+            <div class="section-rule" style="margin: 0 auto 40px;"></div>
+
+            <div class="service-list">
+
+                <div class="service-item">
+                    <div class="service-img-wrap">
+                        <img src="data:image/webp;base64,UklGRkQdAABXRUJQVlA4IDgdAABQlQCdASolAcMAPp1Cmkqlo6IuKNdMacATiWVtyDBohM2s39tBWytnPIG0m005e84tpdys5oF5/PP9r07+zn+x/Vz2Wf7f9rP0T4e/n3sAfyv+t/7/+8/3j4jf9jyefWvsK/sB/xf772sP3c9lUvz81lP3bzs3Jyg4XTiuEycjKk7+/VGg0/FF4sty8mmJc5j5yoCSmzHH0e+/QVEz2MHA/T9aTBTvmwSoynrEsDji8hDzcz81jpX/tFclfC4HiLOoZOkTl7m1QtoPHuZFQ682wvUIOCDDfeowXmUzqiE77lDz/ZobuMUV5kz2qC6eWLou9J1dpP5Rsur6Yx/GvFvVya9RV5tp/5pgQmD+qWHUJuirhC3Xz6UT5c5jajPo8+mrDd6spz7MObI3lIMzK5qz0Wan7aVaGfLrgzHAnUQS8zwFaUwB6rCtKOSlXo1VFRcgHHt9QPEQigpxpBAL9khhiJLJooS6kWqNOw67QyJsu5KLJoMc/akm1Myw9kbXIzgsMobBtEEC/ZBAKhFAzfr8K+DtISKE16ZMUAhV+B/5quRsQRq75B84rSBeGSoMgQjWYmZWJWDskyJSpFtGBNdAKQI2ge1YuGKH84M2m2ZGGPg8DXN+OMydo7mS5VcUz0eaECtTCpml0w2X5Px3ghSxNEsxGw+GaT42jL2kYS8rdMfU1iCHJn1XJq5VaRyoflkw6+oFPitkjZDlMhEeZyr3LH/4wbRvn3tq5f5ScvOyn4wZI/9vyS/CuB66N12UIr9Q+McfJml6nl6ggRZXbHt7sq6BNh2hKEVm2yU9+mwArmcX4RzfGMh9Zb5spDeeFRJNKwxHXbKgr8f4rwGZpD44BgrE66g8tqfiCN2U6qf0HcSxXFTKx5dDPrhKy8Ev3EEVdW0yUeXxI67hXDFZX/RdWsf+ob1d3C3xClTw5CGqPdNftBes035vzN1IgfAIC0zbNDabm+vaLf1p9PEvWXB+dwoPFb7GdwnwUT6AjA/5YBfVyH3TFPTvI+7rwjoW+HIlLlseuv4MlcEuuzrPNsL+N/EnGd1/dzof80LjlnhG6f5/ZHdP40tzEMDZhYq2bhKxthcxHbu1nw+ndxC+uMKPcyCDJQ0LA8JnmHu1iEIB8yXRft9WSOGjyDS9NObm4TTH46z1WVrFzxZawvqodRPndxBhY+2RcXJPjB6qa1P9aAsfczcJa6R1nF2uuEsgh9y0TyEJ+9YEwClz//jnHnpnrnSUFmy1OKGKj1u1TWKCMcT2NHvZlU7tR9WgWL5w/k685PKpjcX93iOFQOus0/cm2/CPUKHO3eynUkMX3fhAqUxiAG57eZOh4ntBYeBJQVymHasP20AH+m474OifZXeZvoN95GAtmJUXporNfF0KuiNSDMGELLQ0wmdIbsmq0VSctfcHisDvIPJDPPGM3qV+vlyztL54uwdFAfddhyNvtSqBBAyEuBdxTAWUBip35v5iWwnMSml4zbn+xZpvsp5C66fleeWyiXGkkKev137jVjCWUcs84f4PeOvn4/1nH/IHjj3A9q5rN3JPD7xXZOd85XaerwZA3NFWFkVAVUrBNIxwrMIsM8+Of9toG2c1VsRMXAAAw8a5xxMr8RLAtIFkmxOoUao8yS21fSnN3so2y2URB7OGG2G2Zj4W37p3ucxYGch/16fL/Htz6LAL85pz98PE/jgDeu5ClV00/XjMFdbWvIKpvTGepqR9rtFviP02O8DausRt9rRciivLwDAdB7eIGtZOgloB6bjk16yvBgB/6KHE2gzyxQ68u7e+c5YKuiecIvKr6u9qVN/cdcAJ18coGKSH2ZAcX/v1CfXlvqn/s4/dVxwdxZj9t0elE7VaPPhrjPKbnZkk9oCoEUeM63hYDD7OoXbIq6oDv8IoKC7XfUhtOqPWBfB6PSa4vXGfBzkbXAmRUbMjTSzQc1xWlbrhGA6V0ocVgq/47zj8myrpSbepsvyV4aH32AT1q0mex03a65tQdp61ykLQssWtGjHM03c0ODso1xW8F7vny2JNViBFraqHIk4EGXS+0laQGzoyctQeTmSqvreadBc/Mk8hUjhfThsuCaUc8Bj/d/H/L7DqBpWlRSF+XPP0Wl3qjXVaKxG2hh44B1YqV/hdwNgBQXIgQgD1umD3e7NbgMH75Kuxm8ngHOR9c4vJR/KzR+u65nHmS8SVgGMHh77+4upTUUWlNaVvX91O/jGsTHwXrKc4GsSEEYF7UUmptlmQqroZH7dnCedPTZTVKejrar7fwCfplCvJAHmtbnu+D9Ad3ZoXTWP6f2emNaLu4cZxSKfriSTTDuOm0P8bZ4qP925IupiGPDaPwXJlrfm0BJWyCkiWHObLBtIl2mvc/SlC6o9vXimh9QAV/MY16/Ew1d7BNx0t9Rlq4NZB80VEpBtnsGb0sE5hD535J4IFO9KDwLBaGd6DJQLyo2IH+cfAZvAfFxqUre2cbleRoeZjEripVkOBoNVIplr7BUOb+Eno+tyikEvu4sqAAGRFVf1Tmy72aNsF5+gcnyYTFZu33wZ/G0RDLS8f6TXYqgUDoMn988DgjRfSjNBex6j4NIQH+neSw7S4LAWXE1IewisWoqq9Yohc2YtC5pHTNsFTnyTiBgIZ2Fvajid0nGJRzBJeMD4fFfUcUS0WkgE5jARz74OowU9H3a1zBJ07v6tbKk9xJ7tWvZARoM+YYp8Yn56H7WLRWd2xl8u4n2dcvd2j96NW2HtYTmHICXg5nlT1e5X+RRIVpUuqlQZzLHPm3jDoBtSyJ9gYDR+g1RNg0m/svl7WiO5zU5KvX0Mc1EkIpj/D6MKIyjNktjYzf1b/yvDS2A3TekANuaNc9SUiuX8e1v1U6IUIre0ldsqDOYJLE1qmwwMWinjC/XWGidA4LWlYdKAUKGDMPoCf1sdWHX7FduQJfhrl+lu+yXwudhjZz5PV/OF7glWrG5zhPY/irbNLg6DT3+zoLL6J0bCq2DEDtW2OPOIlCBP+0fFdo91D7f/wCUylPuofvXxDL2Dx2dgpOQlhQFYMUMvuk64O3eLSbqfczlywC93BivvukwMz50xbRxB8R392Rjhi3XBIcdOFlZ0DoPqPRh75ooS/4IfBy7f5U37+PvhoapS8aFXOyAgV44Hn3cOWJ59sxVnSiA3Y2W5Kuc5pTkthQwJdnT6C7CJoMyGwl7fAwtud+ZAoIt4ruqNGvHu9utBN0V6ZMhxVuXlLYAmeg/6NhP0AcDbF1DSpYkQ6Bk2rD7o8r/0EZrgU3LFLhtlGrCx8Zm4131Ao2fWniYVypC2g8oa3SN7M9CedMNSyOf/u8N0NzBRayP2CAg3SiSaCgEix4/44NsCbqMyTzPOmUk5ep1upzCo6nm0qRpD6v0AAfKfRIszz1+7am/+l+C1W7wWdN/5NMFdGP9Ewy8BRwwrAAhfpxb8g0sdT8ojeGpEfJNf8UOCAU39FUJIcRcS8R8HXjqt3hX4golUkLSrqYP5+IUaDRBKrpzvTVdIERLKLKAHQuY9vdhv7G8AXepgRtinMPOKX2RzyrL0hKLF+ToBPumatBF3xE+DrHlYPVknpn+H7MUdaOHUi2U9up+DPqyYroTGztjHNkofXHw5EWr7CtY4W6QIondWJfAcaIAFKBawRq9+dD7pkWlZVZR8D7vAleioAm+zJYCWn4PuTWvF7U/x+477dGgUmHOCbJuaXnh+yg7+vw0KJM4Z+xkQndfmx7U1Mq7XaWtCDh+R8KUsUNPDZKg+4FA2Ib/25jFGCAQJKF87jOyYl3Dktu5bpCwEPdga3Ad/fswrHQ5dy8nqRxtDyNk8af55/Y8TDVQE/xVlUJVFZxqXxKle1xIojO+Vw1wRe/Xr33LwCcveb0j9B13NTeI4csDG7T7oEi3Js41lKf43s+eKMUk4AEnW8GV3jVOcLYfWp78JNyWnZOzy4ekUT6495oVipMw/8F8c9Umd/+9PiKHncCzjU1UGGoVDICw7i6prQ2vBzCnfo2FQ72QtGcC6KgEUksfb+nht4r1sJ8sS5g3uIsXo4OXDO/6k3FVGmXlVVlp4yXAwC5nk6bX2dzSBEoprY61y7jln4VagxfLIA8UKDqOMsS3CcWCMPFSJETIRjNTzUHaZplqaZOIOVudgh0fjLKfnlHfNzkpGFwcxLRnyfoQTI1yP+PY6UlxGQZ0GqKQ67+7vtvjkcf0HmWwzxcMoX5ePFLjfC2zwXwLZh9H6oh7jkKopY9+NNEn5O1UBrvj4sRMzMXcKloJ5SUW/PbJyWk2mnrZe5ltzfr+x1eAHpkKFzCYe/njkTFXA2dceVi0/dw5zyWmEYnAOyktJ0cAf+vkaa+Mf9gWpKRcq8k0qIAf8T3hpFZzYfTDqse2ufH2TxatEOq7uATS6NAr6IZTajQntpu0PCAV/k6StmXSmPRVwhrFkwHLINx161+07cY/JWeZCy7OkS+OSihaeq2zStLCyNTVpWq8Sr/QS+YVAKbnAR3/uu1lRdvCziAutaxlQACHWriteV0ZXnWnOr7ejRAA8xjHSeVdh3zylE/SV+WkAMev+Y/8Sg1JZpmxpl1/CjoGnGWtL/GRfr0CGvly0/9dWcgGgw1OOidx6vM9MInQDhA0SAMj+PjsaypLjRtd8u8m77nljUz03SFgE/y1fc2P5rhVqH+D95yCRtqadIxyQgD9d6z7/T4P9UW5zb5XkIH7f8XQnFwyYcFz5lcyDSXthQdnHQ8iMfD6byXdf6elJn3aLrfDHc/2+Fw8YEODMkDs4wqfqJbJNFNIros2VYzqmc1kHGZteACdMXPqK9tg4R7FHU4YPCbBKBadLA1aVSlvEPnuo6iDCzdGBTROYbVmUFhTW5s0VjlBbh29ASx+0/mYJrhrjFvs3fO4HzSxu/rEQICi1ifcIl5nPSrRkqqsTc0fBmZIbjTX5hLRQRvZv8pv9PlXWKjro+ohe7P7EEnQZhPNxIaYkAP+HwMiIcZaszXBW9YC8nBcXQnHoscm53MEbNt6AIeVnZh74g+5otsOQjjVwhik6F57v2lagooHLFAzCRbL2U96ninhhE2MGTaV+yo4UdLp93jJ4rTb0LG6hOui4HWW5Cw4QzleF9e0T/AVef1hoZcBGwLO29Vtui4mdEJDFRr/1/HgOs6XN5nwBjeQSViH7P4pDAOzNWQAlqsAtjBvJ6vRCV7YBW+Om+3lhdMQ26RtLJd+zcp61UIlj3UmF35R47cNYZe8ceB4MXYddzPvVMoH6U0xl3NG+3XoTl+kefpIFW+L6PVeHIcwZIgei4mwwlhma65dtvsGKcHPjZ8pV/3H30+3u9whakXiEfaRJI5dCAO+vZohNFABrc6fsvAyxLjxLkJLUNFbJuiZtAYaTIwD5fXLwkHetp2yCkjDzMQ1d48GCfSujKNuJ7RjrA5zIv3uPeXhKrbWlrhNmM8xWqf6W7rwEC7WrjoAfAY6Rzl3RWnm3xe4yrPH2pHK3K4rsp1MRj8ZQTU9d5+0Mh6dSCpmzv7E906bRQxV4RyzdeO6PAwfVQOJP2iqDJB71l/HFm6xT+fS8BrYMvc12/bijNI000VPSA6YhLObwmOH4qT+H7R1cpRLLUs7IBWa0j5GS9Br5ed5kKJioBuyMLaCpV5l7Ak3xGQ5WSR/UeaEqVwQ67GJY8WUdovECp5I3otZnblOkUcasdBkno9Va7GmWgC/daMH4VVLSISN9unt5V6dzCg/J5qdbwtmV6K3/BcQU+uUimnF04Ntbx5TyJ1SUEyH6bGsAr6c7956jn0MHUOKWl5j9hgvMG+SMHZbAKGCHMoe6sTsu7y+sr9hvw3YWaWoGOuzoxzSwSOzWRG16CvegCwIeg+1zB4xorTALArdw+b68iAwsqo2ZP36D7FjyH+KPhUghWwejwnB9eI3c99P6G9JsudZ6I27rooor782xoBWT5vromL9gr0Fenx6XqJDQmykqSKTvFF+1aSDZwvUuKSRwzYa0jgbpcWRuGgnenYXIGS8dG8l23ieCmIsFpy31el5StLGBjPcSkPK8KKELciV9AlxaNyfyPyDSHvMgXI3/lVYBfHYEpmyWKNFFsyL8p58+MGt9SmlGwbermHd1weHQNSptRbj+gg0SnOuQFpUz5ZPqLAAgop8927JRvkujoumrdRGWhQbNaGSkUVpmIA98bHE1IUnkn49pyyFvTUwA80Yi2dBw2zWP6FmugZu5rEj0k8vvGf24x1wLZuQf0+oA1zHlFJXjEWlptm4xXn/y320qupn+RCAR2YaiZYFH3TZQLC0JL021EN1/2WGq3pVaoZijaOQP5TlZsLRj9D1xKfIfwQCzcZNQJmMLlZchTgaP3v0FyhzBU1U9ZjjEjIOUgOQ2fJMcS+r+FxomH1Wol5U31Vg3pb+nQlC6UW/NUz9AWXK08FYVvgJbu2XtX1dRXodYJKS5shEQ8goceRQ392usFwU1wbL1i/36CJoK9av59Ld+PIKWpymwzlz55avtmyRXtUvURAEGDKQ0lBxDO9I//ixOLNZtO20GMDpPTeNQLXpoPt4su1d3kBZ/hVop5yaoP5W3uWQsgWFW6s+AKgeZQp0GwAbkIkOQU4kK9qeb7i7P2iEeZkXeOlHQjM/nfh9EUTOdsq0ck5L0U7HOtJbpQJ3LGax7gIvxgX0gwyuWa+D2+KB1CX0Zt8s0MVLJBguPK3+1st0rZMLK4G7aqzFRFVUR0GmhdgNKu40ojOqglB2C/rjD5C9leR5QGfGJHgODNRyH1bPZalpt83ezGogiUTsyRYvtxa3AJCLUg/4m850xG9rXcWoKb53yPZfBYDePLILyHepuR6LnMgJmJ8UYdxOg4TZIqPcYyGMhws7fBfm+gyVpwGXIU+em1IDTFD8SAT5urlNPfKwjoMlSXo2oI9i8TnjHHJnpcLUMFHl5HTMB8+ai7ASJnwvKRrd6Z2g+EZMjWi28h463EUWVO+3ndLYy3g7A6Mucy12B5khtJw0cuYs1WAyLy7ecwJcx9uuWNN25R77lkAiI6aDpdhhROBvrW9DzW+ZENxg5NQ2RKjOTDZvv/aBGaO69AywU/8RpFDQXEpGDXWJqwLw8HYkG7dHmXBJ+2y5IB0+tGFuY1S2XV47wlYKiu8fnACuhexJcVEL7Gci/Htz71UhdA87HuXvNohT6UX9Tg0wl/bx+kVDVoc4JeuzvO58E3pPa4+2KvqgAXpq0taTrRMa+SURJHN/MDsbaek3y6kXJ3aUHJkdojol2rPE8eddKGbTF3q15Th7gqMUtioa9Quz68PBqPJO68HEkAzv9Xbia+/ud241rOfKEb2fkbankHRIQ8KRKUPEt4BIisu9ud7TkBi+BV0cb8YR/t41PQIPJP1cck+5DATujtk8vhtdsY7o/Eqnzhlxbcw4TFgOAd5iLceOYb+n6eObR2cK1uhfziBHlFVOomF4r3Bw4gHSEGLwTlG6U3VxDbWZnpuChx7JyGO5RPQDPaosIIXi1dsMGOMH7snargHaKHtxCpXdC+8eLrI3r+VxKe+63HcNIreSRh21SL2IfacdnMB3jyUZx7912ktwoBm6cGblWEfXUzzfIEboL3Q3GOHQU+JNCIau2CSwEeWILFl7v0KGLiwrTEZRknsjvdfMeRcL1YDVSTNFnBzTtIBKPbDUBQHmBCcghuDt15FSpIATVlNAhyUAN8ec3wUK9TBJoiG6b7f2BBYYWUrmW4YOfAyI34q3NhWDBm+MAFPCDLeDazNEIo306h3Ob5u5VuH3w9kRw9qqmTncNme7/JWRqdl+bv6l0fSCdhACd8ja8CSW81WLErobj/JFxw2LoRpJudK2jYJJMQ9M0D1ruOR9BGxd8Qie4wgpS7He3OSmvxTwmRTb7Trnv/XSoYR+zb4y8UWcSUwFj88CfqPehn66R+ujNhXYAsOKfvP+YBqiaJ25SXJgW4r6vvyyO7wltLolxbZhqDDxs4q1OeNKetZUx7WINGOeVI7cUAJDcvk2OzGqje6jWlRj+XTbWBY4Nc6kLe+jZ/OY10oOmE+aMYJeL6UQJc/NsQqb6yk4z85TXuYbC+QhHnCFVqEbFJtGt8taviPuJdJWmzKvPaVH2Z+XNgSurBuKA2EqjoDgF02CkzGd1mX5uig6WLXB2ASq/sEpncgSMs+k+5qxVpg49tl0qIFFguN0TW8pB23s//7jmkJ+TbR1BdyF2YSIuaysXTDtwxPHF62BqLLrXc1eCsrs9Lb2Sc0Sb1Y1FPGXLriRqbaS+5FKD3dRSm5V0sQza/wiT2GoGPWbpYF3PKmxNTYe8YqUX7mBp0BWYlY3dm0zSUMUPeMqNFkGlR2KORWWMdIkhebS0Bk8z5Ub9olAeMSvhrqSd29XA6Fnt/Inb1/s0zRhgYbOYtSqA3qfeSFCZQaA7k4S7agvaZWCD+oDMNW56xFgbs6V6BkDjTyfdpsJAlADOjo/hPkJ36lr4rBWS00e0fMor5QiUgdhfte+DLR2FiQH5Qeeg3Bif8HhDFbDpO0vOW+sZKhps1O6moRpNTDuUmCMwmI9vN3QimGjhy+DAnBxlAtghT3obIw30i0/hAOLpfkSBaHe7FHMizCYJEQXyCbd1TOLBI15KNCpe9r1mJQ1Ppyn9bJ3C8bSgK33QOhKpGE4wnlqKqcYE0up/NeLtcgTyB/mCqSzDH+ls1Wp3bPw1c3X0h3duQHvXhUWLP/KuxKIX6k5i5fnmE5lA8L/tbdMdXMLe/OG1gMWAh2I7S63wCTv4c747m3W060/ZRfEKkwZHPNX1dMOYS39OTJ8Rpc2o9iAaMziNBylFPeAYdLsJnKaQxl8KS4f+tRzXm4VYhK8+nmyq8JdCjQH42GcTC6DLadwOTQhZyljoDUfhdDFfZ7lQFG9bhsn1pJNpVMe86hv74dAZykkvJzFycqSxg1W2GXNgGpQsQDBv5ErJ4Rw/ju2/PmoA7pLNBuHuKVKIrDFbGK1P1Zteb6BfSWQLY7SwynN3sSGA2J/A/AWSSRTmdjyrfT4+oyA27j1gBk1FB3561F/Kcw6yMqZoeL3XfhC5MZYledg2pN2pPz3hzgyegUoX34lzDYpy/TreBnukZAAk/GT0t3Thxboz1qbx8BWEm84n8NQq7x3vAAUg9sevXLCFTtmwRXiEW2RwnowY+EWiEf+FZiRKVWJKwB7456tkcEoZ/T4plcR8e1ksEIk0gFZsyP2S5LEj+5l+LVZBSdn8G3uBP0tK3inp9I7cBUDIv7ZsiULQDuMhATQVj86LaqTDxjEjYoSTRxWvYeM6D0mCXMlyCfhdo6NQb0XksyzY1wTW0Oo2VGmgeSjLwxAjSlAhy9M6u83bl6IMYjQkbNpcag9RtDJjNLfLC0igtchhPZhZvkU51bTBF7xZIRSNLXrWlloLkuXA8E3uyReHx6DaEut508ZN5ass1kNuzRtUBcI0kUoh7zoZ7ebMcK04qpCc/mauMaVQTlkdfr9CB35J91pFqIsWYuekutyg5JeTltAUCcG3DKArkSDfMqXEMRnB+Xs6m1krz9WsMxhHzbkVAFOSZV8SNKDFHbOBbsKWYjP7WfLjfwb+5quq7Jx6uZyv7dP2mtNt4EEGCzSeaJuXIMPcxo0JnBEDZEEPNcrcBH6EUTKVQKl12M6lWOzTTkC0+Vz1dQGzGEIwXRDT3uARaTVi2I7NrX57mC2LeUnRuGftIvPpJCRnmrYulymSo99O2ryEQWBik8o0DaQ96VoFh0qT+WqJMDJLYJnbmWfctHo38WIdc7E7q936cvD31elrRO2eI+cy9xK18ELBpYBGIr+fVC+fY/J1sIS2rViP6ZbCtgACJmEXTr1Bp23qreHBLhc3/G7cw2jr3pGL6rc4hsPMd2/Sxb/ctvsMigQQCeqa120vtCrvw/WoMAdj+KPyNiSW8SjEPEHJDD6hUcxO/fMawP4bT84CGH5e89W3H2P6pZxX0oJOPaHNLECDmHf1FCw/vdEcJ57pmgAAA" alt="Haircut" loading="lazy">
+                    </div>
+                    <div class="service-info">
+                        <h3>Haircuts That Suit You</h3>
+                        <p>Professional stylists delivering precision haircuts, modern hairstyles and personalised grooming for men and women.</p>
+                    </div>
+                    <span class="service-arrow">›</span>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-img-wrap">
+                        <img src="data:image/webp;base64,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" alt="Hair Colour" loading="lazy">
+                    </div>
+                    <div class="service-info">
+                        <h3>Professional Hair Colour</h3>
+                        <p>Global hair colour, Keratin treatments, hair smoothing and nourishing rituals by certified professionals.</p>
+                    </div>
+                    <span class="service-arrow">›</span>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-img-wrap">
+                        <img src="https://th.bing.com/th/id/OIP.yepzBpAO3VEKwOTr677gswHaE8?w=299&h=200&c=7&r=0&o=7&pid=1.7&rm=3" alt="Facial" loading="lazy">
+                    </div>
+                    <div class="service-info">
+                        <h3>Facials &amp; Skin Rituals</h3>
+                        <p>Brightening facials, clean-ups, full body rituals and rejuvenation services to restore your natural glow.</p>
+                    </div>
+                    <span class="service-arrow">›</span>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-img-wrap">
+                        <img src="https://th.bing.com/th/id/OIP.iC92nQJWbuJdNwENbQATUQHaE7?w=270&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="Face Massage" loading="lazy">
+                    </div>
+                    <div class="service-info">
+                        <h3>Face Massage</h3>
+                        <p>Relaxing facial massages that improve blood circulation, reduce stress, and leave your skin feeling refreshed and rejuvenated. Performed by trained professionals using premium skincare products.</p>
+                    </div>
+                    <span class="service-arrow">›</span>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=300&h=220&fit=crop" alt="Shaving" loading="lazy">
+                    </div>
+                    <div class="service-info">
+                        <h3>Professional Shaving</h3>
+                        <p>Experience a clean, precise shave with expert barbers using high quality tools and soothing products for a smooth and comfortable grooming experience.</p>
+                    </div>
+                    <span class="service-arrow">›</span>
+                </div>
+
+            </div>
+
+            <div style="text-align:center; margin-top: 40px;">
+                <button onclick="showCustomerView()" class="view-all-btn">View All Services →</button>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="why-section">
+            <p class="section-eyebrow" style="text-align:center;">Why Us</p>
+            <h2 class="section-heading" style="text-align:center;">Why Choose BT Salon</h2>
+            <div class="section-rule" style="margin: 0 auto 40px;"></div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">✂️</div>
+                    <h4>Expert Stylists</h4>
+                    <p>Trained professionals with years of experience in modern and traditional techniques.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🌿</div>
+                    <h4>Hygienic Practices</h4>
+                    <p>We maintain the highest standards of cleanliness and use sterilised tools for every client.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">💎</div>
+                    <h4>Premium Products</h4>
+                    <p>We use only top-quality brands like Loreal, VLCC, Lotus and O3+ for all treatments.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🤝</div>
+                    <h4>Personalised Care</h4>
+                    <p>Every client gets individual attention and a service tailored to their unique needs.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews -->
+        <section class="reviews-section">
+            <p class="section-eyebrow" style="text-align:center;">Testimonials</p>
+            <h2 class="section-heading" style="text-align:center;">What Our Customers Say</h2>
+            <div class="section-rule" style="margin: 0 auto 40px;"></div>
+            <div class="review-cards">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p>"Amazing experience! The stylists are very professional and the salon is very clean. Highly recommended!"</p>
+                    <span class="reviewer">— Google Review</span>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p>"Best salon near Ekana Hospital. Great service, reasonable prices and friendly staff."</p>
+                    <span class="reviewer">— Google Review</span>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p>"Love this place! Always leave feeling refreshed and confident. Will definitely come back."</p>
+                    <span class="reviewer">— Google Review</span>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top: 30px;">
+                <a href="https://maps.app.goo.gl/PjEAyGT3A4zJTVq3A" target="_blank" class="google-reviews-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                    Read All Reviews on Google
+                </a>
+            </div>
+        </section>
+
+        <!-- Map -->
+        <section class="map-section">
+            <p class="section-eyebrow" style="text-align:center;">Visit Us</p>
+            <h2 class="section-heading" style="text-align:center;">Find Us</h2>
+            <div class="section-rule" style="margin: 0 auto 30px;"></div>
+            <div class="map-container">
+                <iframe
+                    src="https://maps.google.com/maps?q=Ak+colony,+Koppa+Rd,+near+ekana+hospital,+Akshaya+Residency,+Akshayanagar,+Bengaluru,+Karnataka+560068&output=embed"
+                    width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+            <div style="text-align:center; margin-top: 20px;">
+                <a href="https://maps.app.goo.gl/PjEAyGT3A4zJTVq3A" target="_blank" class="view-all-btn">Get Directions →</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-brand">BT Life Style Salon</div>
+            <p>AK Colony, Koppa Rd, Near Ekana Hospital, Akshayanagar, Bengaluru 560068</p>
+            <div class="footer-links">
+                <a href="tel:6399747073">📞 +91 63997 47073</a>
+                <a href="https://wa.me/916399747073" target="_blank">💬 WhatsApp</a>
+                <a href="https://maps.app.goo.gl/PjEAyGT3A4zJTVq3A" target="_blank">📍 Directions</a>
+            </div>
+            <p class="footer-copy">© 2025 BT Life Style Salon. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <!-- BOOKING VIEW -->
+    <div id="customerView" class="page">
+        <div class="page-inner">
+            <button onclick="showHomeView()" class="back-btn">← Back</button>
+            <p class="section-eyebrow">Appointments</p>
+            <h2 class="section-heading">Book Your Service</h2>
+            <div class="section-rule"></div>
+            <form id="bookingForm" class="booking-form">
+                <div class="form-group">
+                    <label for="customerName">Your Name</label>
+                    <input type="text" id="customerName" placeholder="Full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerPhone">Mobile Number</label>
+                    <div class="phone-input-wrap">
+                        <span class="phone-prefix">+91</span>
+                        <input type="tel" id="customerPhone" placeholder="XXXXX XXXXX" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    
+                    <label>Select Services</label>
+
+                    <div id="service-checkboxes">
+                        <div class="checkbox-group" onclick="toggleDropdown()">
+                        Select Services
+                        </div>
+
+                        <div id="dropdown-list" class="dropdown-list"></div>
+                    </div>
+                    </div>
+                <div class="form-group">
+                    <label for="bookingDate">Date</label>
+                    <input type="date" id="bookingDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookingTime">Time Slot</label>
+                    <select id="bookingTime" required>
+                        <option value="">Select a date first</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-book">Book an Appointment</button>
+            </form>
+        </div>
+    </div>
+
+    
+
+    <!-- ADMIN LOGIN VIEW -->
+<div id="adminLoginView" class="page">
+    <div class="page-inner" style="max-width: 600px; margin: 0 auto; padding: 50px 30px;">
+        <button onclick="showHomeView()" class="back-btn">← Back</button>
+        
+        <p class="section-eyebrow">Staff Only</p>
+        <h2 class="section-heading">Admin Login</h2>
+        <div class="section-rule"></div>
+        
+        <form id="adminLoginForm">
+            <div>
+                <label for="adminUsername">Username</label>
+                <input type="text" id="adminUsername" required>
+            </div>
+            
+            <div>
+                <label for="adminPassword">Password</label>
+                <input type="password" id="adminPassword" required>
+            </div>
+            
+            <button type="submit">Login</button>
+            <p id="loginError" style="color:red; display:none;">Invalid credentials</p>
+        </form>
+    </div>
+</div>
+
+<!-- ADMIN DASHBOARD VIEW -->
+<div id="adminView" class="page">
+    <div class="page-inner">
+        <button onclick="showHomeView()" class="back-btn">← Back</button>
+
+        <h2>Booking Schedule</h2>
+
+        <input type="date" id="filterDate">
+
+        <div id="bookingsList">
+            <p>⏳ Loading bookings...</p>
+        </div>
+
+        <h3>Change Admin Credentials</h3>
+
+        <form id="changeAdminForm">
+            <input type="text" id="newUsername" placeholder="New Username" required>
+            <input type="password" id="newPassword" placeholder="New Password" required>
+
+            <button type="submit">Save</button>
+
+            <!-- FIXED -->
+            <button type="button" onclick="logout()">Logout</button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

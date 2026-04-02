@@ -1,0 +1,20 @@
+<input id="username" placeholder="Username">
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="adminLogin()">Login</button>
+
+<script>
+function adminLogin() {
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  if (username === "admin" && password === "admin123") {
+    localStorage.setItem("isAdmin", "true");
+
+    // ⚠️ VERY IMPORTANT: correct file name
+    window.location.href = "/public%20dashboard.html";
+  } else {
+    alert("Wrong admin credentials");
+  }
+}
+</script>
