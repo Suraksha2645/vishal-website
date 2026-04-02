@@ -17,6 +17,12 @@ const DATABASE_URL = process.env.DATABASE_URL || 'postgresql://localhost/barbers
 const sequelize = new Sequelize(DATABASE_URL, {
     logging: false,
     dialect: 'postgres',
+    dialectOptions: {
+        ssl: {
+            require: true,
+            rejectUnauthorized: false
+        }
+    },
     pool: {
         max: 5,
         min: 0,
