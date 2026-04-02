@@ -378,6 +378,7 @@ async function handleAdminLogin(e) {
     const username = document.getElementById('adminUsername').value;
     const password = document.getElementById('adminPassword').value;
     console.log('📝 Credentials entered - Username:', username);
+    console.log('🔗 Sending request to:', `${API_URL}/api/admin/login`);
     
     try {
         const response = await fetch(`${API_URL}/api/admin/login`, {
@@ -388,18 +389,25 @@ async function handleAdminLogin(e) {
         
         console.log('🔗 Login response status:', response.status);
         
+        const data = await response.json();
+        console.log('📊 Response data:', data);
+        
         if (!response.ok) {
-            console.error('❌ Login failed with status:', response.status);
-            throw new Error('Invalid credentials');
+            console.error('❌ Login failed with status:', response.status, 'Error:', data.error);
+            throw new Error(data.error || 'Invalid credentials');
         }
         
-        console.log('✅ Login successful');
-        isAdminAuthenticated = true;
-        sessionStorage.setItem('adminAuth', 'true');
-        showAdminView();
+        if (data.success) {
+            console.log('✅ Login successful');
+            isAdminAuthenticated = true;
+            sessionStorage.setItem('adminAuth', 'true');
+            showAdminView();
+        } else {
+            throw new Error(data.error || 'Login failed');
+        }
     } catch (error) {
         console.error('❌ Login error:', error);
-        showMessage('Invalid username or password', 'error');
+        showMessage(error.message || 'Error connecting to server', 'error');
     }
 }
 
