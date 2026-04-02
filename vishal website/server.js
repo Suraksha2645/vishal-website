@@ -121,10 +121,12 @@ sequelize.authenticate()
             }
         } catch (err) {
             console.error('❌ Admin setup error:', err.message);
+            console.error('❌ Stack:', err.stack);
         }
     })
     .catch(err => {
         console.error('❌ PostgreSQL connection error:', err.message);
+        console.error('❌ Full error:', err);
         console.log('⚠️ Server will not function without database');
     });
 
@@ -255,6 +257,7 @@ app.post('/api/admin/login', async (req, res) => {
         }
     } catch (error) {
         console.error('❌ Login error:', error.message);
+        console.error('❌ Login error stack:', error.stack);
         res.status(500).json({ error: 'Server error: ' + error.message });
     }
 });
