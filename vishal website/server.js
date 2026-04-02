@@ -202,13 +202,23 @@ app.post('/api/admin/change', async (req, res) => {
     }
 });
 app.get('/create-admin', async (req, res) => {
-    await Admin.deleteMany({}); // reset
-    await Admin.create({
-        username: 'admin',
-        password: '1234'
-    });
-
-    res.send("Admin created");
+    // Security: require a secret token to prevent unauthorized resets
+    const ADMIN_RESET_TOKEN = process.env.ADMIN_RESET_TOKEN || 'your-secret-token-here';
+    
+    if (!req.query.token || req.query.token !== ADMIN_RESET_TOKEN) {
+        return res.status(403).json({ error: 'Unauthorized - Invalid or missing token' });
+    }
+    
+    try {
+        await Admin.deleteMany({}); // reset
+        await Admin.create({
+            username: 'admin',
+            password: '1234'
+        });
+        res.json({ success: true, message: 'Admin credentials reset to admin/1234' });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 });
 // Serve frontend
 
