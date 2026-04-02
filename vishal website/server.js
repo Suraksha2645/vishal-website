@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
-require('dotenv').config();
+require('dotenv').config({ path: 'password.env' }); // Load from password.env
 
 const app = express();
 let isAdminLOggedIn=false;
@@ -161,19 +161,27 @@ app.delete('/api/bookings/:id', async (req, res) => {
 });
 
 // Admin login 
-        // Simple authentication (in production, use bcrypt)
-        app.post('/api/admin/login', async (req, res) => {
+app.post('/api/admin/login', async (req, res) => {
     try {
         const { username, password } = req.body;
+        console.log('🔐 Login attempt - Username:', username);
 
-        const admin = await Admin.findOne({ username, password });
+        const admin = await Admin.findOne({ username });
+        
+        if (!admin) {
+            console.log('❌ Username not found:', username);
+            return res.status(401).json({ success: false, error: 'Invalid credentials' });
+        }
 
-        if (admin) {
+        if (admin.password === password) {
+            console.log('✅ Login successful for:', username);
             res.json({ success: true });
         } else {
-            res.status(401).json({ success: false });
+            console.log('❌ Password mismatch for user:', username);
+            res.status(401).json({ success: false, error: 'Invalid credentials' });
         }
     } catch (error) {
+        console.error('❌ Login error:', error);
         res.status(500).json({ error: error.message });
     }
 });
