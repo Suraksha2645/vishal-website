@@ -698,43 +698,55 @@ input:focus, select:focus {
     .section-heading { font-size: 1.7em; }
     .hero-banner { height: 420px; }
 }
-/* Fix service checkboxes */
-.dropdown-content input[type="checkbox"] {
-    appearance: auto;
-    -webkit-appearance: checkbox;
-    width: 16px;
-    height: 16px;
-    padding: 0;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-
-
-
+/* Services dropdown trigger button */
 .checkbox-group {
-  display: grid;
-  grid-template-columns: 1fr 1fr;  /* 2 columns */
-  gap: 8px;
-  margin-top: 8px;
-}
-
-.checkbox-group label {
   display: flex;
   align-items: center;
-  gap: 0px;
-  font-size: 10px;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
   cursor: pointer;
+  font-size: 14px;
+  color: #555;
+  user-select: none;
 }
-.checkbox-group input {
-  width: auto !important;
-  height: auto !important;
-  margin: 0;
+.checkbox-group::after {
+  content: "▾";
+  font-size: 14px;
+  color: #999;
 }
-/* FORCE checkbox to look normal */
-input[type="checkbox"] {
-  all: revert;
+
+/* Services dropdown list */
+.dropdown-list {
+  display: none;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  background: #fff;
+  max-height: 220px;
+  overflow-y: auto;
+  z-index: 100;
+}
+.dropdown-list label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+}
+.dropdown-list label:last-child {
+  border-bottom: none;
+}
+.dropdown-list label:hover {
+  background: #f9f5f0;
+}
+.dropdown-list input[type="checkbox"] {
   width: 16px !important;
   height: 16px !important;
   cursor: pointer;
+  flex-shrink: 0;
 }

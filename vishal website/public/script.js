@@ -145,24 +145,29 @@ async function updateTimeSlots() {
 async function handleBooking(e) {
   e.preventDefault();
 
-  const nameEl = document.getElementById("customerName");
-  const phoneEl = document.getElementById("customerPhone");
-  const dateEl = document.getElementById("bookingDate");
-  const timeEl = document.getElementById("bookingTime");
+  const name = document.getElementById("customerName").value.trim();
+  const phone = document.getElementById("customerPhone").value.trim();
+  const date = document.getElementById("bookingDate").value;
+  const time = document.getElementById("bookingTime").value;
 
-  const name = nameEl.value;
-  const phone = phoneEl.value;
-  const date = dateEl.value;
-  const time = timeEl.value;
+  if (!name || !phone) {
+    showMessage('Please enter your name and phone number.', 'error');
+    return;
+  }
+  if (selectedServices.length === 0) {
+    showMessage('Please select at least one service.', 'error');
+    return;
+  }
+  if (!date) {
+    showMessage('Please select a date.', 'error');
+    return;
+  }
+  if (!time) {
+    showMessage('Please select a time slot.', 'error');
+    return;
+  }
 
-  // Use the global selectedServices array
-  const booking = {
-    name,
-    phone,
-    services: selectedServices,
-    date,
-    time
-  };
+  const booking = { name, phone, services: selectedServices, date, time };
 
   try {
     const response = await fetch(`${API_URL}/api/bookings`, {
@@ -171,17 +176,20 @@ async function handleBooking(e) {
       body: JSON.stringify(booking)
     });
     
+    const data = await response.json();
+
     if (!response.ok) {
-      const error = await response.json();
-      throw new Error(error.error || 'Booking failed');
+      throw new Error(data.error || 'Booking failed. Please try again.');
     }
     
-    const result = await response.json();
-    showMessage(`✅ Booking confirmed for ${name} on ${date} at ${time}!`, 'success');
+    showMessage(`Booking confirmed for ${name} on ${date} at ${time}!`, 'success');
     document.getElementById('bookingForm').reset();
+    selectedServices = [];
+    updateDropdownText();
+    document.getElementById('dropdown-list').style.display = 'none';
     updateTimeSlots();
   } catch (error) {
-    showMessage(error.message, 'error');
+    showMessage(error.message || 'Could not connect to server. Please try again.', 'error');
   }
 }
 
