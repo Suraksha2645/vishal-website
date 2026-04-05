@@ -1,0 +1,94 @@
+The source list for the Content Security Policy directive 'default-src' contains an invalid source: ''unsafe-dynamic''. It will be ignored.Understand this error
+/~:1 The source list for the Content Security Policy directive 'default-src' contains an invalid source: ''unsafe-dynamic''. It will be ignored.Understand this error
+00bo3mlkmjr8z.js:21 
+      /////////////////////
+   ///////////////////////////
+  ////////@@@@@@@//////////////
+  ////////@@@@@@@//////////////
+  ////////@@@@@@@//////////////        Curious and driven?
+  ///////////////@@@@@@@///////        Work with us!
+  ///////////////@@@@@@@///////
+  ///////////////@@@@@@@///////        https://join.replit.com/hack.with.us
+  ////////@@@@@@@//////////////
+  ////////@@@@@@@//////////////
+  ////////@@@@@@#//////////////
+   ///////////////////////////
+      /////////////////////
+      
+00bo3mlkmjr8z.js:21 Download the Apollo DevTools for a better development experience: https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm
+00bo3mlkmjr8z.js:21 [LaunchDarkly] LaunchDarkly client initialized
+/~:1 Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner.
+dotdevproxy.janeway.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.janeway.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.janeway.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.kirk.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.kirk.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+ [OrgSwitcher] splitLink routing "preConnect" → org, selectedOrgId=none
+ [OrgSwitcher] org link headers: {"hasAuth":true,"hasCookie":false,"hasOrgHeader":false,"orgId":"none"}
+ createNativeOauthConnect [object Object]
+ Opening OAuth popup window [object Object]
+ adding message event listener
+dotdevproxy.kirk.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.picard.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.picard.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.picard.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.pike.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.pike.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.pike.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.riker.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.riker.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.riker.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.sisko.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.sisko.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.sisko.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.spock.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.spock.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+0i8wy8tbht2ow.js:2 Error while parsing the 'sandbox' attribute: 'allow-downloads-without-user-activation' is an invalid sandbox flag.
+C @ 0i8wy8tbht2ow.js:2Understand this error
+0i8wy8tbht2ow.js:2 Unrecognized feature: 'ambient-light-sensor'.
+C @ 0i8wy8tbht2ow.js:2Understand this warning
+0i8wy8tbht2ow.js:2 Unrecognized feature: 'battery'.
+C @ 0i8wy8tbht2ow.js:2Understand this warning
+0i8wy8tbht2ow.js:2 Unrecognized feature: 'execution-while-not-rendered'.
+C @ 0i8wy8tbht2ow.js:2Understand this warning
+0i8wy8tbht2ow.js:2 Unrecognized feature: 'execution-while-out-of-viewport'.
+C @ 0i8wy8tbht2ow.js:2Understand this warning
+0i8wy8tbht2ow.js:2 Unrecognized feature: 'layout-animations'.
+C @ 0i8wy8tbht2ow.js:2Understand this warning
+0i8wy8tbht2ow.js:2 Unrecognized feature: 'legacy-image-formats'.
+C @ 0i8wy8tbht2ow.js:2Understand this warning
+0i8wy8tbht2ow.js:2 Unrecognized feature: 'navigation-override'.
+C @ 0i8wy8tbht2ow.js:2Understand this warning
+0i8wy8tbht2ow.js:2 Unrecognized feature: 'oversized-images'.
+C @ 0i8wy8tbht2ow.js:2Understand this warning
+0i8wy8tbht2ow.js:2 Unrecognized feature: 'publickey-credentials'.
+C @ 0i8wy8tbht2ow.js:2Understand this warning
+0i8wy8tbht2ow.js:2 Unrecognized feature: 'speaker-selection'.
+C @ 0i8wy8tbht2ow.js:2Understand this warning
+0i8wy8tbht2ow.js:2 Unrecognized feature: 'unoptimized-images'.
+C @ 0i8wy8tbht2ow.js:2Understand this warning
+0i8wy8tbht2ow.js:2 Unrecognized feature: 'unsized-media'.
+C @ 0i8wy8tbht2ow.js:2Understand this warning
+0i8wy8tbht2ow.js:2 Unrecognized feature: 'pointer-lock'.
+C @ 0i8wy8tbht2ow.js:2Understand this warning
+0i8wy8tbht2ow.js:2 Allow attribute will take precedence over 'allowfullscreen'.
+C @ 0i8wy8tbht2ow.js:2Understand this warning
+0i8wy8tbht2ow.js:2 Allow attribute will take precedence over 'allowpaymentrequest'.
+C @ 0i8wy8tbht2ow.js:2Understand this warning
+dotdevproxy.spock.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.worf.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.worf.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.worf.replit.dev/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.janeway.repl.co/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.janeway.repl.co/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.janeway.repl.co/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.kirk.repl.co/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.kirk.repl.co/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.kirk.repl.co/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+dotdevproxy.picard.repl.co/__reachability:1  Failed to load resource: net::ERR_NAME_NOT_RESOLVEDUnderstand this error
+(index):1 Unsafe attempt to load URL https://15496adb-9980-49e2-871c-b71f9c177680-00-ixkc8d1uwyfh.pike.replit.dev/__replco/workspace_iframe.html?initialPath=%2F&id=default-start-application from frame with URL chrome-error://chromewebdata/. Domains, protocols and ports must match.
+Understand this error
+00bo3mlkmjr8z.js:21  GET https://dotdevproxy.picard.repl.co/__reachability net::ERR_NAME_NOT_RESOLVED
+(anonymous) @ 00bo3mlkmjr8z.js:21
+k @ 0r4ncjjplsyc..js:2
+a @ 0r4ncjjplsyc..js:2Understand this error
