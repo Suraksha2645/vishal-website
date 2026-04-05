@@ -17,7 +17,7 @@ const DATABASE_URL = process.env.DATABASE_URL || 'postgresql://localhost/barbers
 const sequelize = new Sequelize(DATABASE_URL, {
     logging: false,
     dialect: 'postgres',
-    dialectOptions: {
+    dialectOptions: DATABASE_URL.includes('localhost') ? {} : {
         ssl: {
             require: true,
             rejectUnauthorized: false
@@ -317,7 +317,7 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`🚀 Server running on port ${PORT}`);
 });
