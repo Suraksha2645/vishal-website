@@ -21,13 +21,13 @@ args = "Start application"
 name = "Start application"
 author = "agent"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "cd 'vishal website' && node server.js"
-waitForPort = 5000
-
 [workflows.workflow.metadata]
 outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd btlifestylesaloon && node server.js"
+waitForPort = 5000
 
 [[ports]]
 localPort = 5000
@@ -35,4 +35,4 @@ externalPort = 80
 
 [deployment]
 deploymentTarget = "autoscale"
-run = ["bash", "-c", "cd 'vishal website' && node server.js"]
+run = ["bash", "-c", "cd btlifestylesaloon && node server.js"]

@@ -11,7 +11,7 @@ A full-stack salon/barbershop appointment booking web application for BT Life St
 
 ## Project Structure
 ```
-vishal website/
+btlifestylesaloon/
 ├── server.js         # Main Express server (entry point)
 ├── password.env      # Environment config (dotenv)
 ├── public/
