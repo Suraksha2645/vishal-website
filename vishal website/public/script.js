@@ -89,7 +89,7 @@ function setupEventListeners() {
 }
 function toggleDropdown() {
   const list = document.getElementById("dropdown-list");
-  list.style.display = list.style.display === "block";
+  list.style.display = list.style.display === "block" ? "none" : "block";
 }
 
 function setMinDate() {
@@ -418,9 +418,17 @@ function showMessage(message, type) {
     const messageDiv = document.createElement('div');
     messageDiv.className = type === 'success' ? 'success-message' : 'error-message';
     messageDiv.textContent = message;
-    
-    const form = document.getElementById('bookingForm');
-    form.parentNode.insertBefore(messageDiv, form);
+
+    const adminLoginView = document.getElementById('adminLoginView');
+    const isAdminLoginVisible = adminLoginView && (adminLoginView.style.display === 'block' || adminLoginView.classList.contains('active'));
+
+    if (isAdminLoginVisible) {
+        const loginForm = document.getElementById('adminLoginForm');
+        loginForm.parentNode.insertBefore(messageDiv, loginForm);
+    } else {
+        const form = document.getElementById('bookingForm');
+        form.parentNode.insertBefore(messageDiv, form);
+    }
     window.scrollTo(0, 0);
     setTimeout(() => messageDiv.remove(), 5000);
 }
