@@ -4,6 +4,25 @@ const cors = require('cors');
 const path = require('path');
 require('dotenv').config({ path: 'password.env' });
 
+// WhatsApp notification via CallMeBot
+async function sendWhatsApp(booking) {
+    const apiKey = process.env.CALLMEBOT_API_KEY;
+    if (!apiKey) {
+        console.log('⚠️ CALLMEBOT_API_KEY not set, skipping WhatsApp notification');
+        return;
+    }
+    const services = Array.isArray(booking.services) ? booking.services.join(', ') : 'N/A';
+    const message = `📅 New Booking!\nName: ${booking.name}\nPhone: ${booking.phone}\nServices: ${services}\nDate: ${booking.date}\nTime: ${booking.time}\nTotal: ₹${booking.price}`;
+    const encoded = encodeURIComponent(message);
+    const url = `https://api.callmebot.com/whatsapp.php?phone=916399747073&text=${encoded}&apikey=${apiKey}`;
+    try {
+        const res = await fetch(url);
+        console.log('📲 WhatsApp notification sent, status:', res.status);
+    } catch (err) {
+        console.error('❌ WhatsApp notification failed:', err.message);
+    }
+}
+
 const app = express();
 
 // Middleware
@@ -216,6 +235,7 @@ app.post('/api/bookings', async (req, res) => {
         });
 
         console.log('✅ Booking created:', booking.id);
+        sendWhatsApp(booking);
         res.status(201).json(booking);
     } catch (error) {
         console.error('Booking error:', error);

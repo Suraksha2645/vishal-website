@@ -38,19 +38,18 @@ function initializeApp() {
 
 
 function populateServices() {
-  const dropdownList = document.getElementById("dropdown-list");
-
-  dropdownList.innerHTML = "";
+  const container = document.getElementById("service-checkboxes");
+  container.innerHTML = "";
 
   services.forEach(service => {
     const label = document.createElement("label");
-
+    label.className = "service-checkbox-item";
     label.innerHTML = `
       <input type="checkbox" value="${service.name}">
-      ${service.name} - ₹${service.price}
+      <span class="service-checkbox-name">${service.name}</span>
+      <span class="service-checkbox-price">₹${service.price}</span>
     `;
-
-    dropdownList.appendChild(label);
+    container.appendChild(label);
   });
 }
 
@@ -71,7 +70,7 @@ function setupEventListeners() {
     
     // Checkbox service selector
     document.addEventListener("change", function (e) {
-      if (e.target.matches("#dropdown-list input[type='checkbox']")) {
+      if (e.target.matches("#service-checkboxes input[type='checkbox']")) {
         const value = e.target.value;
         if (e.target.checked) {
           selectedServices.push(value);
@@ -79,17 +78,8 @@ function setupEventListeners() {
           const index = selectedServices.indexOf(value);
           if (index > -1) selectedServices.splice(index, 1);
         }
-        updateDropdownText();
       }
     });
-    
-    document.addEventListener("DOMContentLoaded", function () {
-      initializeApp();
-    });
-}
-function toggleDropdown() {
-  const list = document.getElementById("dropdown-list");
-  list.style.display = list.style.display === "block" ? "none" : "block";
 }
 
 function setMinDate() {
@@ -185,25 +175,13 @@ async function handleBooking(e) {
     showMessage(`Booking confirmed for ${name} on ${date} at ${time}!`, 'success');
     document.getElementById('bookingForm').reset();
     selectedServices = [];
-    updateDropdownText();
-    document.getElementById('dropdown-list').style.display = 'none';
+    document.querySelectorAll('#service-checkboxes input[type="checkbox"]').forEach(cb => cb.checked = false);
     updateTimeSlots();
   } catch (error) {
     showMessage(error.message || 'Could not connect to server. Please try again.', 'error');
   }
 }
 
-function updateDropdownText() {
-  const btn = document.querySelector(".checkbox-group");
-
-  if (!btn) return; // Exit if button doesn't exist
-
-  if (selectedServices.length === 0) {
-    btn.textContent = "Select Services";
-  } else {
-    btn.textContent = selectedServices.join(", ");
-  }
-}
 
 async function displayBookings() {
     console.log('📥 displayBookings called');
