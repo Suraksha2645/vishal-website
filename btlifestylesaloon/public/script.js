@@ -72,11 +72,14 @@ function setupEventListeners() {
     document.addEventListener("change", function (e) {
       if (e.target.matches("#service-checkboxes input[type='checkbox']")) {
         const value = e.target.value;
+        const item = e.target.closest(".service-checkbox-item");
         if (e.target.checked) {
           selectedServices.push(value);
+          if (item) item.classList.add("selected");
         } else {
           const index = selectedServices.indexOf(value);
           if (index > -1) selectedServices.splice(index, 1);
+          if (item) item.classList.remove("selected");
         }
       }
     });
@@ -176,6 +179,7 @@ async function handleBooking(e) {
     document.getElementById('bookingForm').reset();
     selectedServices = [];
     document.querySelectorAll('#service-checkboxes input[type="checkbox"]').forEach(cb => cb.checked = false);
+    document.querySelectorAll('#service-checkboxes .service-checkbox-item').forEach(item => item.classList.remove('selected'));
     updateTimeSlots();
   } catch (error) {
     showMessage(error.message || 'Could not connect to server. Please try again.', 'error');
