@@ -2,24 +2,45 @@ const express = require('express');
 const { Sequelize, DataTypes } = require('sequelize');
 const cors = require('cors');
 const path = require('path');
+const nodemailer = require('nodemailer');
 require('dotenv').config({ path: 'password.env' });
 
-// WhatsApp notification via CallMeBot
-async function sendWhatsApp(booking) {
-    const apiKey = process.env.CALLMEBOT_API_KEY;
-    if (!apiKey) {
-        console.log('⚠️ CALLMEBOT_API_KEY not set, skipping WhatsApp notification');
+// Email notification
+async function sendBookingEmail(booking) {
+    const gmailPass = process.env.GMAIL_APP_PASSWORD;
+    if (!gmailPass) {
+        console.log('⚠️ GMAIL_APP_PASSWORD not set, skipping email notification');
         return;
     }
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'lifestylesalon66@gmail.com',
+            pass: gmailPass,
+        },
+    });
     const services = Array.isArray(booking.services) ? booking.services.join(', ') : 'N/A';
-    const message = `📅 New Booking!\nName: ${booking.name}\nPhone: ${booking.phone}\nServices: ${services}\nDate: ${booking.date}\nTime: ${booking.time}\nTotal: ₹${booking.price}`;
-    const encoded = encodeURIComponent(message);
-    const url = `https://api.callmebot.com/whatsapp.php?phone=916399747073&text=${encoded}&apikey=${apiKey}`;
+    const mailOptions = {
+        from: 'lifestylesalon66@gmail.com',
+        to: 'lifestylesalon66@gmail.com',
+        subject: `New Booking - ${booking.name} on ${booking.date}`,
+        html: `
+            <h2>New Booking Received</h2>
+            <table style="border-collapse:collapse;width:100%;max-width:500px;">
+                <tr><td style="padding:8px;border:1px solid #ddd;"><strong>Name</strong></td><td style="padding:8px;border:1px solid #ddd;">${booking.name}</td></tr>
+                <tr><td style="padding:8px;border:1px solid #ddd;"><strong>Phone</strong></td><td style="padding:8px;border:1px solid #ddd;">+91 ${booking.phone}</td></tr>
+                <tr><td style="padding:8px;border:1px solid #ddd;"><strong>Services</strong></td><td style="padding:8px;border:1px solid #ddd;">${services}</td></tr>
+                <tr><td style="padding:8px;border:1px solid #ddd;"><strong>Date</strong></td><td style="padding:8px;border:1px solid #ddd;">${booking.date}</td></tr>
+                <tr><td style="padding:8px;border:1px solid #ddd;"><strong>Time</strong></td><td style="padding:8px;border:1px solid #ddd;">${booking.time}</td></tr>
+                <tr><td style="padding:8px;border:1px solid #ddd;"><strong>Total</strong></td><td style="padding:8px;border:1px solid #ddd;">₹${booking.price}</td></tr>
+            </table>
+        `,
+    };
     try {
-        const res = await fetch(url);
-        console.log('📲 WhatsApp notification sent, status:', res.status);
+        await transporter.sendMail(mailOptions);
+        console.log('📧 Booking email sent successfully');
     } catch (err) {
-        console.error('❌ WhatsApp notification failed:', err.message);
+        console.error('❌ Email failed:', err.message);
     }
 }
 
@@ -235,7 +256,7 @@ app.post('/api/bookings', async (req, res) => {
         });
 
         console.log('✅ Booking created:', booking.id);
-        sendWhatsApp(booking);
+        sendBookingEmail(booking);
         res.status(201).json(booking);
     } catch (error) {
         console.error('Booking error:', error);
